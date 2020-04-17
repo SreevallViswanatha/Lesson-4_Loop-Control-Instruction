@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Calculation of simple interest for 3 sets of p, n and r.
+
+int main()
+{
+   int p, n, count;
+   float r, si;
+   
+   count = 1;
+   while (count<=3)
+   {
+       printf("\nEnter the value of Principal amount: ");
+       scanf("%d", &p);
+       
+       printf("\nEnter the value of rate: ");
+       scanf("%f", &r);
+       
+       printf("\nEnter the value of number of years: ");
+       scanf("%d", &n);
+       
+       si = p*n*r/100;
+       printf("The Simple Interest = Rs. %\nf", si);
+       
+       count = count + 1;
+   }
+}
