@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//Print numbers from 1 to 10 using ++ operator.
+//Print numbers from 1 to 10 using -- operator.
 
 int main()
 {
