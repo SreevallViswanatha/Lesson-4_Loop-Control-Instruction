@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Print numbers from 1 to 10 using a pre-incrementation operator.
+int main()
+{
+  int i = 0;
+  while(++i <=10)
+    printf("%d\n", i);
+}
