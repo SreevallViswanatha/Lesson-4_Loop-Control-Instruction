@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Print numbers from 1 to 10 using a pre-decrementation operator.
+int main()
+{
+  int i = 11;
+  while(--i >=1)
+    printf("%d\n", i);
+}
