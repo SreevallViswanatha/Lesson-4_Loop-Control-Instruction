@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+//WAP to print all even numbers in the range 100 to 200.
+int main()
+{
+  int n=100;
+  while (n<=200)
+  {
+      if(n%2==0)
+      {
+          printf("%d\n", n);
+      }
+      n++;
+  }
+}
