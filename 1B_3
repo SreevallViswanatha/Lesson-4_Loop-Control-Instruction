@@ -1,0 +1,15 @@
+1B_3
+#include <stdlib.h>
+//WAP to print all the odd numbers from 100 to 1
+int main()
+{
+  int n=100;
+  while (n>=1)
+  {
+      if(n%2 == 1)
+      {
+          printf("%d\n", n);
+      }
+      n--;
+  }
+}
