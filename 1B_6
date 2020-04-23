@@ -12,3 +12,8 @@ int main()
   while (n>=1)
   {
       sum = sum+n;
+            n--;
+  }
+  printf("The sum of numbers from 1 to %d is: %d", num, sum);
+}
+
