@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Wap to display the multiplication table of the number entered.
+int main()
+{
+  int num, prod;
+  int i = 1;
+  printf("Enter a number: ");
+  scanf("%d", &num);
+  while(i<=12)
+  {
+      prod = num * i;
+      printf("%d * %d = %d\n", num, i, prod);
+      i++;
+  }
+}
