@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+//Wap to accept a number and display the sum of the first and last digit of that number
+
+//Logic to swap first and last digit of a number
+//Begin:
+//    read(num)
+//    lastDigit ← num % 10;
+//    digits ← log10(num);
+//    firstDigit ← num / pow(10, digits);
+//
+//    swappedNum ← lastDigit * pow(10, digits);
+//    swappedNum ← swappedNum + num % pow(10, digits);
+//    swappedNum ← swappedNum - lastDigit;
+//    swappedNum ← swappedNum + firstDigit;
+//End
+
+//Let us do a dry run of the algorithm to get grip on the logic.
+//
+//Suppose num = 12345
+//--------------------
+//lastDigit  = 12345 % 10 => 5
+//digits     = log10(12345) => 4
+//firstDigit = 12345 / pow (10, 4) => 12345 / 10000 => 1
+//
+//swappedNum = 5 * pow(10, 4) => 5 * 10000 => 50000
+//swappedNum = 50000 + (12345 % 10000) => 50000 + 2345 => 52345
+//swappedNum = 52345 - 5 => 52340
+//swappedNum = 52340 + 1 => 52341
+int main()
+{
+  int last_digit, orig_num, first_digit, digits, swapped_num, a;
+
+  printf("Enter a number: ");
+  scanf("%d", &orig_num);
+  first_digit = orig_num;
+  last_digit = orig_num%10; // get the last digit of any number this way and save it
+  digits = (int)log10(orig_num);//This is one way to find the number of digits in a given number.
+  //The actual answer we get is (total number of digits -1). we have to add 1 to get the digits but here we want the same.
+  first_digit = (int)(orig_num / pow(10, digits)); //Another way to find the first digit.
+  swapped_num = last_digit;
+  a= ((int)pow(10, digits)+1);//when I debugged it I found that the power function is returning 9999 instead of 10000 and I had to add 1 to make it 10000
+  swapped_num*=(((int) (pow(10, digits)))+1);
+  swapped_num += orig_num % (((int) (pow(10, digits)))+1);
+  swapped_num = swapped_num - last_digit;
+  swapped_num = swapped_num + first_digit;
+
+ printf("The original number is %d", orig_num);
+ printf("The swapped number is %d", swapped_num);
+}
