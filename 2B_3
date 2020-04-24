@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Wap to accept a number and display the sum of the first and last digit of that number
+int main()
+{
+  int last_digit, orig_num, first_digit, sum = 0;
+
+  printf("Enter a number: ");
+  scanf("%d", &first_digit);
+  orig_num = first_digit;
+  last_digit = orig_num%10; // get the last digit of any number this way and save it
+  while(first_digit>=10)
+  {
+      first_digit = first_digit/10; //Keep removing the last digit from the number until you get the first digit.
+  }
+  sum = first_digit+last_digit;
+  printf("The sum of the first digit, %d and the last digit, %d of the number %d is : %d", first_digit, last_digit, orig_num, sum);
+}
