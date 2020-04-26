@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Print all the ASCII values of all characters.
+int main()
+{
+  int i=0;
+  //print ASCII values from 0 to 255
+  while(i<=255)
+  {
+      printf("ASCII Value of character %c is %d\n", i, i);
+      i++;
+  }
+}
