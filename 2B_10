@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+//print if the number is a palindrome.
+int main()
+{
+   int n, num = 0, digits;
+   printf("Enter a number to print it in words: ");
+   scanf("%d", &n);
+   //we have to add this in order to get the code work for numbers like 190 or 1000
+   //Find the total digits in n.
+   digits = (int) log10(n);
+   //save the reverse of the number in num
+   while(n!=0)
+   {
+       num = (num*10)+(n%10);
+       n = n/10;
+   }
+   //find the total trailing zeros.
+   digits = digits - ((int)log10(num));
+   //Extract the last digit of number and
+   //print corresponding digit in words till the number becomes 0.
+   while(num!=0)
+   {
+       switch(num%10)
+       {
+            case 0:
+                printf("Zero ");
+                break;
+            case 1:
+                printf("One ");
+                break;
+            case 2:
+                printf("Two ");
+                break;
+            case 3:
+                printf("Three ");
+                break;
+            case 4:
+                printf("Four ");
+                break;
+            case 5:
+                printf("Five ");
+                break;
+            case 6:
+                printf("Six ");
+                break;
+            case 7:
+                printf("Seven ");
+                break;
+            case 8:
+                printf("Eight ");
+                break;
+            case 9:
+                printf("Nine ");
+                break;
+       }
+       num = num/10;
+   }
+   while(digits)
+   {
+       printf("Zero ");
+       digits--;
+   }
+
+}
