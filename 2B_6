@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Product of all the digits in a number
+int main()
+{
+   int num, rem, orig_num, prod = 1;
+   printf("Enter the number: ");
+   scanf("%d", &num);
+   orig_num = num;
+   while(num>0)
+   {
+       rem = num%10;
+       prod = prod*rem;
+       num = num/10;
+   }
+   printf("The sum of all the digits of the number %d, is : %d", orig_num, prod);
+}
