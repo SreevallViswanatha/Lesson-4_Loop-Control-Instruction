@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+//save the reverse of a number and print it.
+int main()
+{
+   int num, last_digit, orig_num, reverse = 0;
+   printf("Enter the number: ");
+   scanf("%d", &num);
+   orig_num = num;
+   while(num>0)
+   {
+       last_digit = num%10;
+       reverse = (reverse *10) + (last_digit);
+       num = num/10;
+   }
+   printf("The reverse of the number, %d is : %d", orig_num, reverse);
+}
