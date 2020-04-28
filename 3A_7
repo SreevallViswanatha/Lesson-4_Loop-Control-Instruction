@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Find whether a number is prime
+int main()
+{
+   int i=2, num, isPrime;
+   /*
+    * isPrime is used as a flag variable.
+    * If isPrime = 0, then number is composite
+    * else if isPrime = 1, then number is prime.
+    * Initially we assume the number as prime.
+    */
+    isPrime = 1;
+   printf("Enter a number to check prime: ");
+   scanf("%d", &num);
+
+   while(i<=num/2)
+   {
+      //check divisibility of num
+       if(num%i == 0)
+       {
+           //set isPrime to 0 indicating it as composite number
+          isPrime = 0;
+           //Terminate the loop.
+           break;
+       }
+
+       i++;
+   }
+   if(isPrime == 1 && num>1)
+   {
+       printf("%d is prime number", num);
+   }
+   else
+   {
+       printf("%d is composite number", num);
+   }
+}
