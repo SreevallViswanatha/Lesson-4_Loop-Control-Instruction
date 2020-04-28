@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Find GCF of two numbers
+int main()
+{
+   int i=1, num1, num2, min, gcf =1;
+
+   printf("Enter the first number to find HCF: ");
+   scanf("%d", &num1);
+   printf("Enter the second number to find HCF: ");
+   scanf("%d", &num2);
+   //Find the minimum of the two numbers.
+   min = (num1<num2)?num1:num2;
+
+   while(i<=min)
+   {
+       //if i is the factor of both the numbers then it is HCF
+       if(num1%i==0 && num2%i==0)
+       {
+           gcf = i;
+       }
+       i++;
+   }
+   printf("HCF of %d and %d = %d\n", num1, num2, gcf);
+}
