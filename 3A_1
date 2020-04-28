@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Find power of any number 
+int main()
+{
+    int base, exponent;
+    int power = 1;
+    int i = 1;
+
+    printf("Enter base: ");
+    scanf("%d", &base);
+    printf("Enter exponent: ");
+    scanf("%d", &exponent);
+
+    while(i<=exponent)
+    {
+        power = power*base;
+        i++;
+    }
+    printf("%d ^ %d = %d", base, exponent, power);
+}
