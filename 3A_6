@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Find LCM of two numbers
+int main()
+{
+   int i=1, num1, num2, max, lcm =1;
+
+   printf("Enter the first number to find LCM: ");
+   scanf("%d", &num1);
+   printf("Enter the second number to find LCM: ");
+   scanf("%d", &num2);
+   //Find the maximum of the two numbers.
+   max = (num1>num2)?num1:num2;
+   //First multiple to be checked
+   i = max;
+  //Run loop indefinitely(while(1)) till LCM is found.
+   while(1)
+   {
+       ////if 'i' divides both 'num1' and 'num2'
+       //then 'i' is the LCM.
+       if(i%num1==0 && i%num2==0)
+       {
+           lcm = i;
+           //Terminate the loop after LCM is found.
+           break;
+       }
+       //If LCM is not found then generate next multiple of max between both numbers.
+       i+=max;
+   }
+   printf("LCM of %d and %d = %d\n", num1, num2, lcm);
+}
