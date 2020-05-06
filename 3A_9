@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Find prime numbers from start to end.
+int main()
+{
+   int i, end, start, isPrime;
+
+   printf("Enter the lower limit: ");
+   scanf("%d", &start);
+
+   printf("Enter the upper limit: ");
+   scanf("%d", &end);
+
+   printf("All prime numbers between upper limit, %d to the lower limit, %d are : \n", start, end);
+   //find all Prime numbers between start to end.
+   if(start<2)
+   {
+       start = 2;
+   }
+   i = start;
+   while(i<=end)
+   {
+
+        /*
+         * isPrime is used as a flag variable.
+         * If isPrime = 0, then number is composite
+         * else if isPrime = 1, then number is prime.
+         * Initially we assume the number as prime.
+         */
+         isPrime = 1;
+         //Initialize j to 2 all the time before iteration of i starts.
+         int j = 2;
+
+         while(j<=i/2)
+         {
+            //check divisibility of num
+             if(i%j == 0)
+             {
+                 //set isPrime to 0 indicating it as composite number
+                isPrime = 0;
+                 //Terminate the loop.
+                 break;
+             }
+
+             j++;
+         }
+        if(isPrime == 1)
+         {
+            printf("%d, ", i);
+         }
+       i++;
+   }
+
+}
