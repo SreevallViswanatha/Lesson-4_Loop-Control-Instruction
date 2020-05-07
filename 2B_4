@@ -30,22 +30,33 @@
 //swappedNum = 52340 + 1 => 52341
 int main()
 {
-  int last_digit, orig_num, first_digit, digits, swapped_num, a;
+  #include <stdio.h>
+#include <stdlib.h>
 
-  printf("Enter a number: ");
-  scanf("%d", &orig_num);
-  first_digit = orig_num;
-  last_digit = orig_num%10; // get the last digit of any number this way and save it
-  digits = (int)log10(orig_num);//This is one way to find the number of digits in a given number.
-  //The actual answer we get is (total number of digits -1). we have to add 1 to get the digits but here we want the same.
-  first_digit = (int)(orig_num / pow(10, digits)); //Another way to find the first digit.
-  swapped_num = last_digit;
-  a= ((int)pow(10, digits)+1);//when I debugged it I found that the power function is returning 9999 instead of 10000 and I had to add 1 to make it 10000
-  swapped_num*=(((int) (pow(10, digits)))+1);
-  swapped_num += orig_num % (((int) (pow(10, digits)))+1);
-  swapped_num = swapped_num - last_digit;
-  swapped_num = swapped_num + first_digit;
+int main()
+{
+    int count = 0;
 
- printf("The original number is %d", orig_num);
- printf("The swapped number is %d", swapped_num);
+    int num, orig_num, last_digit, power=1, swap_number, digits, first_digit, exponent;
+    printf("Enter the number: ");
+    scanf("%d", &num);
+    orig_num = num;
+    last_digit = num%10;
+    digits = (int)log10(orig_num);
+    exponent = digits;
+    while(exponent!=0)
+    {
+        power = power * 10;
+        --exponent;
+    }
+    printf("\npower number : %d", power);
+    first_digit = orig_num/power;
+    swap_number = last_digit * power;
+    printf("\nThe swapnumber: %d", swap_number);
+    swap_number = swap_number +(orig_num%power);
+    swap_number = swap_number - last_digit;
+    swap_number = swap_number + first_digit;
+    printf("The swapped number is : %d", swap_number);
 }
+
+
