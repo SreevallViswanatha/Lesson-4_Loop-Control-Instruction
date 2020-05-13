@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+// find all the strong numbers from 1 to n.
+
+int main()
+{
+   int i, num, originalNum, lastDigit, sum=0, end, cursor;
+   unsigned long long fact;
+
+   printf("Enter ending limit: ");
+   scanf("%d", &end);
+   printf("All strong numbers between 1 to %d are:\n", end);
+   num =1;
+   while(num<=end)
+   {
+
+
+        originalNum = num;
+        cursor = num;
+        //find sum of factorial of digits
+        sum = 0;
+
+        while(cursor>0)
+          {
+              //Get the last digit of num.
+              lastDigit = cursor%10;
+              //find the factorial of the last digit.
+
+              fact = 1;
+              i = 1;
+              while(i<=lastDigit)
+                {
+                   fact = fact * i;
+                   i++;
+                }
+              //Add the factorial to sum
+              sum = sum + fact;
+              cursor = cursor/10;
+           }
+        if(sum == originalNum)
+           {
+               printf("%d\n", originalNum);
+           }
+        num++;
+    }
+}
+
