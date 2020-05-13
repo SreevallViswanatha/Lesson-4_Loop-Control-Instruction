@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+// find perfect numbers from 1 to n.
+int main()
+{
+    int i=1, j, end, sum;
+
+    printf("Enter the lower limit: ");
+    scanf("%d", &end);
+
+    printf("All Perfect numbers between 1 to %d:\n", end);
+
+    while(i<=end)
+    {
+        sum = 0;
+        j = 1;
+        while(j<=i/2)
+        {
+            if(i%j == 0)
+               {
+                   sum = sum + j;
+               }
+            j++;
+        }
+        if(sum == i)
+        {
+            printf("%d\n", i);
+        }
+
+        i++;
+    }
+}
