@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+// find perfect numbers from start to end.
+int main()
+{
+    int i, j, end, start, sum;
+
+    printf("Enter the start limit: ");
+    scanf("%d", &start);
+
+    printf("Enter the end limit: ");
+    scanf("%d", &end);
+
+    printf("All Perfect numbers between 1 to %d:\n", end);
+
+    if(start<1)
+    {
+        start = 1;
+    }
+    i = start;
+
+    while(i<=end)
+    {
+        sum = 0;
+        j = 1;
+        while(j<=i/2)
+        {
+            if(i%j == 0)
+               {
+                   sum = sum + j;
+               }
+            j++;
+        }
+        if(sum == i)
+        {
+            printf("%d\n", i);
+        }
+
+        i++;
+    }
+}
