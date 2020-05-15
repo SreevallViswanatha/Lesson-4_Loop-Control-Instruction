@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+//Find twos compliment of a binary number.
+
+#define SIZE 8  //defining a constant SIZE and assigning 8 to it.
+
+int main()
+{
+    char binary[SIZE + 1], onesComp[SIZE + 1], twosComp[SIZE + 1];
+    int i, carry = 1;
+
+    printf("Enter %d bit binary value: ", SIZE);
+
+    gets(binary);
+
+    //store all inverted bits of binary value to onesComp
+    i = 0;
+    while(i<SIZE)
+    {
+        if(binary[i] == '1')
+        {
+            onesComp[i] = '0';
+        }
+        else if(binary[i] == '0')
+        {
+            onesComp[i] = '1';
+        }
+        i++;
+
+    }
+    //mark the end of onesComp string
+    onesComp[SIZE] = '\0';
+    //Add 1 to ones complement.
+    i = SIZE-1;
+    while(i>=0)
+    {
+        if(onesComp[i] == '1' && carry == 1)
+        {
+            twosComp[i] = '0';
+        }
+        else if(onesComp[i] == '0' && carry == 1)
+        {
+            twosComp[i] = '1';
+            carry = 0;
+        }
+        else
+        {
+            twosComp[i] = onesComp[i];
+        }
+        i--;
+    }
+    twosComp[SIZE] = '\0';
+
+
+    printf("Original binary = %s\n", binary);
+    printf("Ones complement = %s\n", onesComp);
+    printf("Twos complement = %s\n", twosComp);
+
+
+}
