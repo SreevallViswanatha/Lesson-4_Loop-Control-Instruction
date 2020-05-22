@@ -1,0 +1,41 @@
+/**
+ * C program to convert binary number system to decimal number system
+ */
+
+#include <stdio.h>
+#include <math.h>
+
+
+int main()
+{
+    long long binary, decimal=0, tempBinary;
+    int N=0;
+
+    printf("Enter any binary number: ");
+    scanf("%lld", &binary);
+
+    tempBinary = binary;
+
+    while(tempBinary!=0)
+    {
+        /* If current binary digit is 1 */
+        if(tempBinary % 10 == 1)
+        {
+            int i = 1, result = 1;
+            while(i<=N)
+            {
+                result = result * 2;
+                i++;
+            }
+            decimal +=result;
+        }
+
+        N++;
+        tempBinary /= 10;
+    }
+
+    printf("Binary number = %lld\n", binary);
+    printf("Decimal number= %lld", decimal);
+
+    return 0;
+}
