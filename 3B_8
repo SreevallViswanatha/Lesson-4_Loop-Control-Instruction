@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 //C program to convert binary to hexadecimal number system
-//There is a problem with this program. If 01001110 is the binary, the actual answer is 4E, it gives E.
-// This is because the first 0 is eliminated. Sandy will fix it.
+
 int main()
 {
     int hexConstant[] = {0, 1, 10, 11, 100, 101, 110, 111, 1000,
@@ -11,7 +10,7 @@ int main()
 
     long long binary, tempBinary;
     char hex[20];
-    int index, i=0, digit;
+    int index, i, digit;
 
     /* Input binary number from user */
     printf("Enter binary number: ");
@@ -28,6 +27,7 @@ int main()
         digit = tempBinary % 10000;
 
         /* Find hexadecimal equivalent of last four digit */
+        i = 0;
         while(i<16)
         {
             if(hexConstant[i] == digit)
