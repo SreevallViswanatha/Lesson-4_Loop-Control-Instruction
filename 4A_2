@@ -1,0 +1,15 @@
+//Compute value of one number raised to another
+#include <stdio.h>
+int main()
+{
+    int x, y, i = 1;
+    long int power = 1;
+    printf("\nEnter two numbers: ");
+    scanf("%d%d", &x, &y);
+    while(i<=y)
+    {
+        power = power *x;
+        i++;
+    }
+    printf("%d to the power of %d is %ld\n", x, y, power);
+}
